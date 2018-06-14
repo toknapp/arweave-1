@@ -192,11 +192,7 @@ do_read_encrypted_block(Filename) ->
 
 %% @doc Accurately recalculate the current cumulative size of the Arweave directory
 update_directory_size() ->
-	spawn(
-		fun() ->
-			ar_meta_db:put(used_space, calculate_used_space())
-		end
-	),
+	ar_meta_db:put(used_space, calculate_used_space()),
 	timer:apply_after(?DIRECTORY_SIZE_TIMER, ar_storage, update_directory_size, []).
 
 %% @doc Generate a wildcard search string for a block,
