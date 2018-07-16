@@ -53,9 +53,9 @@ COPY --from=builder /arweave/lib/prometheus/_build/default/lib/prometheus/ebin \
 COPY --from=builder /arweave/lib/accept/_build/default/lib/accept/ebin \
 		lib/accept/_build/default/lib/accept/ebin
 COPY --from=builder /arweave/lib/prometheus_process_collector/_build/default/lib/prometheus_process_collector/ebin \
-		lib/prometheus_process_collector/_build/default/lib/prometheus_process_collector/ebin
+            lib/prometheus_process_collector/_build/default/lib/prometheus_process_collector/ebin
 COPY --from=builder /arweave/lib/prometheus_process_collector/_build/default/lib/prometheus_process_collector/priv \
-		lib/prometheus_process_collector/_build/default/lib/prometheus_process_collector/priv
+            lib/prometheus_process_collector/_build/default/lib/prometheus_process_collector/priv
 
 EXPOSE 1984
 ENTRYPOINT ["./docker-arweave-server"]
