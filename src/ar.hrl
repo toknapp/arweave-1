@@ -44,7 +44,13 @@
 -define(DEFAULT_DIFF, 8).
 -ifdef(DEBUG).
 -define(MIN_DIFF, ?DEFAULT_DIFF).
--else.
+-endif.
+
+-ifdef(FIXED_DIFF).
+-define(MIN_DIFF, ?FIXED_DIFF).
+-endif.
+
+-ifndef(MIN_DIFF).
 -define(MIN_DIFF, 31).
 -endif.
 
