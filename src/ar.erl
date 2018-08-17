@@ -487,7 +487,8 @@ rebuild() ->
 	MakeOptions = [
 		load,
 		{d, 'TARGET_TIME', ?TARGET_TIME},
-		{d, 'RETARGET_BLOCKS', ?RETARGET_BLOCKS}
+		{d, 'RETARGET_BLOCKS', ?RETARGET_BLOCKS},
+		{d, 'MIN_DIFF', ?MIN_DIFF}
 	] ++ fixed_diff_option() ++ fixed_delay_option(),
 	case make:all(MakeOptions) of
 		error ->
