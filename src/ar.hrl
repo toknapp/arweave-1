@@ -57,7 +57,11 @@
 -endif.
 
 -ifndef(MIN_DIFF).
+-ifdef(FIXED_DIFF).
+-define(MIN_DIFF, ?FIXED_DIFF).
+-else.
 -define(MIN_DIFF, 31).
+-endif.
 -endif.
 
 -ifndef(TARGET_TIME).
