@@ -97,8 +97,9 @@ testnet-docker: docker-image
 	cat peers.testnet | sed 's/^/peer /' \
 		| xargs docker run --name=arweave-testnet arweave
 
-dev-chain-docker: docker-image
-	docker run --cpus=0.5 --rm --name arweave-dev-chain --publish 1984:1984 arweave \
+dev-chain-docker:
+	docker build --build-arg ERLC_OPTS=-DFIXED_DIFF=8 -t arweave-dev-chain .
+	docker run --cpus=0.5 --rm --name arweave-dev-chain --publish 1984:1984 arweave-dev-chain \
 		no_auto_join init mine peer 127.0.0.1:9
 
 build-plt:
