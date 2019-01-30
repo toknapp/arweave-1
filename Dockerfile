@@ -9,6 +9,7 @@ COPY Makefile .
 COPY Emakefile .
 ADD lib lib
 ADD src src
+ADD bin bin
 
 # E.g. "-DTARGET_TIME=5 -DRETARGET_BLOCKS=10" or "-DFIXED_DIFF=2"
 ARG ERLC_OPTS
