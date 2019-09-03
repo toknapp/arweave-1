@@ -10,8 +10,17 @@ else
 	SHELL_OPTS=-noinput
 fi
 
-exec erl $SHELL_OPTS -pa ebin/ \
-	-pa lib/prometheus/_build/default/lib/prometheus/ebin \
-	-pa lib/accept/_build/default/lib/accept/ebin \
-	-pa lib/prometheus_process_collector/_build/default/lib/prometheus_process_collector/ebin \
-	-s ar rebuild -s prometheus  -run ar main "$@"
+ERL_OPTS="$ERL_OPTS -pa ebin/"
+ERL_OPTS="$ERL_OPTS -pa lib/jiffy/ebin"
+ERL_OPTS="$ERL_OPTS -pa lib/cowboy/ebin"
+ERL_OPTS="$ERL_OPTS -pa lib/cowlib/ebin"
+ERL_OPTS="$ERL_OPTS -pa lib/ranch/ebin"
+ERL_OPTS="$ERL_OPTS -pa lib/prometheus/ebin"
+ERL_OPTS="$ERL_OPTS -pa lib/accept/ebin"
+ERL_OPTS="$ERL_OPTS -pa lib/prometheus_process_collector/ebin"
+ERL_OPTS="$ERL_OPTS -pa lib/prometheus_httpd/ebin"
+ERL_OPTS="$ERL_OPTS -pa lib/prometheus_cowboy/ebin"
+ERL_OPTS="$ERL_OPTS -sasl errlog_type error"
+ERL_OPTS="$ERL_OPTS -s prometheus"
+
+exec erl $SHELL_OPTS $ERL_OPTS -s ar rebuild -run ar main "$@"
