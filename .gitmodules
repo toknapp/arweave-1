@@ -27,7 +27,7 @@
 	url = https://github.com/deadtrickster/prometheus-httpd.git
 [submodule "lib/RandomX"]
 	path = lib/RandomX
-	url = https://github.com/ArweaveTeam/RandomX.git
+	url = https://github.com/tevador/RandomX.git
 [submodule "lib/meck"]
 	path = lib/meck
 	url = https://github.com/eproxus/meck.git

@@ -34,7 +34,7 @@ endif
 CFLAGS += -fPIC -I $(ERTS_INCLUDE_DIR) -I $(ERL_INTERFACE_INCLUDE_DIR) -I ../lib/RandomX/src
 CXXFLAGS += -fPIC -I $(ERTS_INCLUDE_DIR) -I $(ERL_INTERFACE_INCLUDE_DIR) -I ../lib/RandomX/src
 
-LDLIBS += -L $(ERL_INTERFACE_LIB_DIR) -lerl_interface -lei -L ../lib/RandomX/bin -lrandomx
+LDLIBS += -L $(ERL_INTERFACE_LIB_DIR) -lerl_interface -lei -L ../lib/RandomX/build -lrandomx
 LDFLAGS += -shared
 
 # Verbosity.

@@ -66,7 +66,9 @@ catlog:
 all: build
 
 build-randomx:
-	make -C lib/RandomX
+	mkdir -p lib/RandomX/build
+	cd lib/RandomX/build && cmake ..
+	make -C lib/RandomX/build
 	make -C c_src
 
 gitmodules:

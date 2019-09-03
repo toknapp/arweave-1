@@ -1,6 +1,6 @@
 FROM erlang:22-alpine as builder
 
-RUN apk update && apk add make g++ git coreutils
+RUN apk update && apk add make g++ git coreutils cmake
 
 WORKDIR /arweave
 
